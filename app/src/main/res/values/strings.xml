@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">MakeMyRide</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="loginFragment">Login</string>
+    <string name="email_id">Email Id</string>
+    <string name="password">Password</string>
+    <string name="logout">Logout</string>
+    <string name="enter_the_boarding_point">Enter the Boarding point</string>
+    <string name="enter_the_dropping_point">Enter the Dropping point</string>
+    <string name="book_your_ride_now">Book your Ride Now</string>
+    <string name="book">Book</string>
+    <string name="approx_value">Approx. Value</string>
+    <string name="timing">Timing</string>
+    <string name="date_of_ride">Date of Ride</string>
+    <string name="abcd">ABCD</string>
+    <string name="title_activity_main2">MainActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="todo">TODO</string>
+    <string name="make_my_ride">Make My Ride</string>
+    <string name="about_us">Book your cabs with online booking company started in the year 2019 june 27. While booking cabs with MakeMyRide, you can expect the ultimate online booking experience. With premium customer service, 24/7 dedicated helpline for support, and over hundreds delighted customers currently, MakeMyRide takes great pride in enabling customer satisfaction. With a cheapest rates, book your cab at the lowest prices. Avail great offers, exclusive on app.</string>
+    <string name="last_booking_details">LAST BOOKING DETAILS</string>
+    <string-array name="profileListItems">
+        <item>Personal Details</item>
+        <item>My Rewards</item>
+        <item>Booking Details</item>
+        <item>Logout</item>
+    </string-array>
+
+</resources>

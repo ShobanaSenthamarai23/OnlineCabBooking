@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Fragments.HomeFragment">
+
+    <FrameLayout
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:id="@+id/map_fragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/editText"
+            android:layout_width="252dp"
+            android:layout_height="48dp"
+            android:layout_weight="0.5"
+            android:background="@color/colorWhite"
+            android:hint="Search Location"
+            android:inputType="textPersonName" />
+
+        <Button
+            android:id="@+id/search_location"
+            android:layout_width="139dp"
+            android:layout_height="59dp"
+            android:layout_weight="0.5"
+            android:text="Search" />
+            <!--android:onClick="searchLocation"-->
+
+
+    </LinearLayout>
+</FrameLayout>

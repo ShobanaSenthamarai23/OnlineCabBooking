@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FAD70A"
+    tools:context=".Fragments.AboutUsFragment">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="158dp"
+        android:layout_height="156dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="center"
+        android:layout_marginStart="128dp"
+        android:layout_marginTop="71dp"
+        android:layout_marginEnd="125dp"
+        android:layout_marginBottom="504dp"
+        android:contentDescription="@string/todo"
+        android:src="@drawable/taxipep" />
+
+    <TextView
+        android:id="@+id/about_us"
+        android:layout_width="match_parent"
+        android:layout_height="275dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="257dp"
+        android:layout_marginBottom="199dp"
+        android:background="#CDDC39"
+        android:drawablePadding="1dp"
+        android:text="@string/about_us"
+        android:textAlignment="textStart"
+        android:textColor="#0C0C0C"
+        android:textSize="20sp" />
+
+
+</RelativeLayout>

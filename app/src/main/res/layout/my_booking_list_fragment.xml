@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:padding="8dp"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+    <androidx.cardview.widget.CardView
+        android:layout_width="387dp"
+        android:layout_height="190dp"
+        android:layout_margin="10dp"
+        app:cardBackgroundColor="#E9F18F">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="200dp"
+            android:orientation="vertical">
+
+            <!--<TextView-->
+            <!--android:id="@+id/textViewName"-->
+            <!--android:layout_width="138dp"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_alignParentStart="true"-->
+            <!--android:layout_alignParentEnd="true"-->
+            <!--android:layout_alignParentBottom="true"-->
+            <!--android:layout_marginStart="8dp"-->
+            <!--android:layout_marginTop="10dp"-->
+            <!--android:layout_marginEnd="239dp"-->
+            <!--android:layout_marginBottom="174dp"-->
+            <!--android:text="shobana"-->
+            <!--android:textAppearance="@style/Base.TextAppearance.AppCompat.Large" />-->
+
+            <TextView
+                android:id="@+id/textView_destination"
+                android:layout_width="162dp"
+                android:layout_height="27dp"
+                android:layout_alignStart="@+id/textViewto"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="55dp"
+                android:layout_marginTop="19dp"
+                android:layout_marginEnd="19dp"
+                android:layout_marginBottom="154dp"
+                android:text="Sholinganalur"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium" />
+
+            <TextView
+                android:id="@+id/textViewStartingPoint"
+                android:layout_width="146dp"
+                android:layout_height="37dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="147dp"
+                android:text="Navalur"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium" />
+
+            <TextView
+                android:id="@+id/textViewto"
+                android:layout_width="41dp"
+                android:layout_height="25dp"
+                android:layout_alignStart="@+id/textViewStartingPoint"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="151dp"
+                android:layout_marginTop="21dp"
+                android:layout_marginEnd="195dp"
+                android:layout_marginBottom="154dp"
+                android:text="to"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium" />
+
+            <TextView
+                android:id="@+id/textViewTime"
+                android:layout_width="122dp"
+                android:layout_height="31dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="212dp"
+                android:layout_marginTop="63dp"
+                android:layout_marginEnd="53dp"
+                android:layout_marginBottom="106dp"
+                android:text="8:35pm"
+                android:textSize="18dp" />
+
+            <TextView
+                android:id="@+id/textViewDate"
+                android:layout_width="144dp"
+                android:layout_height="34dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginEnd="250dp"
+                android:layout_marginBottom="101dp"
+                android:text="2/09/2019"
+                android:textSize="18dp" />
+
+            <Button
+                android:id="@+id/button_cancelBooking"
+                android:layout_width="99dp"
+                android:layout_height="30dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="254dp"
+                android:layout_marginTop="126dp"
+                android:layout_marginEnd="34dp"
+                android:layout_marginBottom="44dp"
+                android:background="@color/colorAccent"
+                android:text="Cancel" />
+
+            <TextView
+                android:id="@+id/textViewAmount"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="44dp"
+                android:layout_marginEnd="261dp"
+                android:layout_marginBottom="50dp"
+                android:text="TextView"
+                android:inputType="number"/>
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+</LinearLayout>
+</ScrollView>
