@@ -55,18 +55,21 @@ public class ProfilePageAdapter  extends RecyclerView.Adapter<ProfilePageAdapter
             public void onClick(View view) {
                 makeText(mContext, (CharSequence) mProfileDetails.get(position), LENGTH_SHORT).show();
                 switch (position) {
-                    case 0:
+                   case 0:
                         Fragment newFragment = new PersonalDetailsFragment();
-                        ( (MainActivity) mActivity).replaceFragment(newFragment);
-
+                        ( (MainActivity) mActivity).replaceFragment(newFragment, false);
+//                        ((MainActivity) mActivity).replaceFragment(newFragment);
                         break;
                     case 1:
-                        Fragment myRewardsFragment = new MyRewardFragment();
-                        ( (MainActivity) mActivity).replaceFragment(myRewardsFragment);
+                        Fragment myRewardsFragment = new OffersFragment();
+                        ( (MainActivity) mActivity).replaceFragment(myRewardsFragment, false);
+//                        ((MainActivity) mActivity).replaceFragment(myRewardsFragment);
                         break;
                     case 2:
                         Fragment myBookingFragment = new MyBookingFragment();
-                        ( (MainActivity) mActivity).replaceFragment(myBookingFragment);
+                        ( (MainActivity) mActivity).replaceFragment(myBookingFragment, false);
+//                        ((MainActivity) mActivity).replaceFragment(myBookingFragment);
+
                         break;
                     case 3:
                         Intent intent = new Intent(Intent.ACTION_DIAL);
@@ -74,12 +77,18 @@ public class ProfilePageAdapter  extends RecyclerView.Adapter<ProfilePageAdapter
                         mActivity.startActivity(intent);
                     case 4:
                         Fragment aboutUsFragment = new AboutUsFragment();
-                        ( (MainActivity) mActivity).replaceFragment(aboutUsFragment);
+                        ( (MainActivity) mActivity).replaceFragment(aboutUsFragment, false);
+//                        ((MainActivity) mActivity).replaceFragment(aboutUsFragment);
+
                         break;
                     case 5:
+                        SharedPreferenceManager sharedPreferenceManager = new SharedPreferenceManager((MainActivity) mActivity);
+                        sharedPreferenceManager.logoutUser();
+                        makeText(mContext, "User logged Out Successfully", LENGTH_SHORT).show();
                         intent = new Intent(mActivity, UserAuthenticationActivity.class);
                         mActivity.startActivity(intent);
-                        makeText(mContext, "User logged Out Successfully", LENGTH_SHORT).show();
+                        mActivity.finish();
+
                         break;
 
 
@@ -88,20 +97,25 @@ public class ProfilePageAdapter  extends RecyclerView.Adapter<ProfilePageAdapter
         });
     }
 
-
-
+    /**
+     * The getItemCount() method should return the number of list items
+     * @return size of the list Items
+     */
     @Override
-        public int getItemCount() {
+    public int getItemCount() {
 
-            return mProfileDetails.size();
+        return mProfileDetails.size();
+    }
+
+    /**
+     * Inner class which is to initialise the views
+     */
+    public class MyViewHolder extends RecyclerView.ViewHolder {
+        TextView profileDetailList;
+
+        public MyViewHolder(View view) {
+            super(view);
+            profileDetailList = itemView.findViewById(R.id.profile_listView);
         }
-
-        public class MyViewHolder extends RecyclerView.ViewHolder {
-            TextView profileDetailList;
-            public MyViewHolder(View view) {
-                super(view);
-                profileDetailList = itemView.findViewById(R.id.profile_listView);
-            }
-        }
-
+    }
     }
