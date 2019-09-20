@@ -20,8 +20,12 @@ import android.view.MenuItem;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
-    public static final String TAG = "HomeFragment";
+       public static final String TAG = "HomeFragment";
     HomeFragment mHomeFragment;
+    /**
+     * Performing navigation action in navigation bar
+     */
+
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
 
@@ -32,17 +36,21 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.home:
                     setTitle("HomeFragment");
                     HomeFragment homeFragment = new HomeFragment();
-                    replaceFragment(homeFragment);
+//                    replaceFragment(homeFragment, true);
+//                    replaceFragment(homeFragment);
                     return true;
                 case R.id.ride_booking:
                     setTitle("BookingFragment");
+
                     fragment = new BookingFragment();
-                    replaceFragment(fragment);
+                    replaceFragment(fragment, false);
+//                    replaceFragment(fragment);
                     return true;
                 case R.id.rewards:
                     setTitle("OffersFragment");
                     fragment = new OffersFragment();
-                    replaceFragment(fragment);
+                    replaceFragment(fragment, false);
+//                    replaceFragment(fragment);
                     return true;
                 case R.id.profile:
                     setTitle("ProfileFragment");
@@ -62,44 +70,73 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_activity);
         BottomNavigationView navView = findViewById(R.id.nav_view);
-//        mTextMessage = findViewById(R.id.message);
         mHomeFragment = new HomeFragment();
         addFragment(mHomeFragment);
         setTitle("HomeFragment");
         navView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
     }
 
-    //replace fragment
-    public void replaceFragment(Fragment fragment) {
-        FragmentManager fm = getSupportFragmentManager();
-        FragmentTransaction fragmentTransaction = fm.beginTransaction();
-        Fragment frag=popNonDefaultFragment();
-        fragmentTransaction.replace(R.id.frame, fragment);
-        fragmentTransaction.addToBackStack(TAG);
-        fragmentTransaction.commit();
+    /**
+     * @param fragment
+     */
+
+    //replacing fragments
+    public void replaceFragment(Fragment fragment, boolean isHomeFragments) {
+
+            FragmentManager fm = getSupportFragmentManager();
+            FragmentTransaction fragmentTransaction = fm.beginTransaction();
+            fragmentTransaction.replace(R.id.frame, fragment);
+            if(isHomeFragments)
+            {
+                fragmentTransaction.addToBackStack(null);
+            }
+            fragmentTransaction.commit();
+
     }
 
-
-    public void addFragment(Fragment f) {
+    /**
+     * @param fragment
+     * @returns void
+     */
+    public void addFragment(Fragment fragment) {
         FragmentManager fm = getSupportFragmentManager();
         FragmentTransaction ft = fm.beginTransaction();
-        ft.add(R.id.frame, f);
+        ft.add(R.id.frame, fragment);
         ft.addToBackStack(TAG);
         ft.commit();
     }
+
+    /**
+     * On back press it moves to mainActivity( default fragment)
+     */
 
     @Override
     public void onBackPressed() {
         super.onBackPressed();
     }
 
-    public Fragment popNonDefaultFragment() {
+
+     //Popping the fragments before it is replaced or added by other fragment in UI
+    public boolean popNonDefaultFragment() {
         FragmentManager fm = getSupportFragmentManager();
-        int count=getSupportFragmentManager().getBackStackEntryCount();
-        Fragment frag = fm.getFragments().get(count>0?count-1:count);
-       return frag;
+        int count = fm.getFragments().size();
+        if ( count > 0 ) {
+            for ( int i = 0; i < count; i++ ) {
+                Fragment fragment = fm.getFragments().get( i );
+                if ( ! ( fragment instanceof  HomeFragment ) )
+                {
+                    fm.popBackStackImmediate();
+                }
+                if ( i == count ) {
+                    return true;
+                }
+            }
+        }
+
+       return false;
         }
     }
+
 
     //    @Override
 //    public void onBackPressed() {
